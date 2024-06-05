@@ -43,7 +43,7 @@ impl<O> std::ops::DerefMut for ObjectSectionInfo<O> {
 
 impl<'data: 'file, 'file, O, D> ModuleSectionInfo<D> for &'file ObjectSectionInfo<O>
 where
-    O: Object<'data, 'file>,
+    O: Object<'data>,
     D: From<&'data [u8]>,
 {
     fn base_svma(&self) -> u64 {

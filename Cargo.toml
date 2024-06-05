@@ -1,6 +1,6 @@
 [package]
 name = "framehop-object"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Alex Franchuk <alex.franchuk@gmail.com>"]
 description = "A framehop::ModuleSectionInfo implementation for the object crate"
@@ -12,7 +12,7 @@ repository = "https://github.com/afranchuk/framehop-object/"
 
 [dependencies]
 framehop = ">=0.9"
-object = { version = ">=0.30,<0.35", default-features = false, features = ["read_core"] }
+object = { version = ">=0.35", default-features = false, features = ["read_core"] }
 
 [dev-dependencies]
-object = "0.30"
+object = "0.35"
