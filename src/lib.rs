@@ -9,7 +9,7 @@ pub struct ObjectSectionInfo<O>(O);
 impl<O> ObjectSectionInfo<O> {
     /// Create an ObjectSectionInfo.
     ///
-    /// To avoid moving or cloning a value, see [`from_ref`].
+    /// To avoid moving or cloning a value, use [from_ref()][`Self::from_ref()`].
     pub fn new(v: O) -> Self {
         ObjectSectionInfo(v)
     }
@@ -17,7 +17,8 @@ impl<O> ObjectSectionInfo<O> {
     /// Create a reference to an ObjectSectionInfo from another reference.
     pub fn from_ref<'a>(v: &'a O) -> &'a Self {
         // # Safety
-        // It is safe to transmute to a `repr(transparent)` type from the inner type.
+        // It is safe to transmute to a `repr(transparent)` type from the inner type, and likewise
+        // for references to those types.
         unsafe { std::mem::transmute(v) }
     }
 
